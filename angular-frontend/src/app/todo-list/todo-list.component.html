@@ -1,0 +1,23 @@
+<h2> To-Do List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Topic</th>
+            <th> Description </th>
+            <th> Status</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let todo of todos" >
+            <td> {{ todo.topic }} </td>
+            <td> {{ todo.description }} </td>
+            <td> {{ todo.status }} </td>
+            <td>
+                <button (click) = "updateTodo(todo.id)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteTodo(todo.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "todoDetails(todo.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
